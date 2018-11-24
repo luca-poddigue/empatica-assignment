@@ -295,3 +295,13 @@ For more information on AngularJS please check out [angularjs.org][angularjs].
 [selenium]: http://docs.seleniumhq.org/
 [travis]: https://travis-ci.org/
 [travis-docs]: https://docs.travis-ci.com/user/getting-started
+
+
+
+
+npm-install
+npm install -g http-server
+
+
+
+no scss in build because I already have compiled css from teh ide
