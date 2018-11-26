@@ -1,5 +1,3 @@
-'use strict';
-
 describe('empatica.view1 module', function () {
 
     beforeEach(module('empatica'));

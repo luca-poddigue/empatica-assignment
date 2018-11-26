@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('empatica', [
     'pascalprecht.translate',
     'ngRoute'
