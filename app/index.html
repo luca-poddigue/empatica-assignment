@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<html lang="en" ng-app="empatica" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<html lang="en" ng-app="empatica" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<html lang="en" ng-app="empatica" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="empatica" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,17 +15,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <base href="/">
+
     <!-- build:css / -->
     <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+    <!-- inject:css -->
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="common/style/colors.css">
+    <link rel="stylesheet" href="common/style/fonts.css">
+    <link rel="stylesheet" href="common/style/screen-sizes.css">
+    <!-- endinject -->
     <!-- endbuild -->
 
 </head>
 <body>
 <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
+    <li><a href="/home">view1</a></li>
+    <li><a href="/orders">view2</a></li>
 </ul>
 
 <!--[if lt IE 7]>
@@ -41,12 +48,14 @@
 <script src="lib/angular/angular.min.js"></script>
 <script src="lib/angular-route/angular-route.min.js"></script>
 <script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/angular-translate/dist/angular-translate.min.js"></script>
+<!-- inject:js -->
 <script src="app.js"></script>
-<script src="view1/view1.js"></script>
-<script src="view2/view2.js"></script>
-<script src="core/version/version.js"></script>
-<script src="core/version/version-directive.js"></script>
-<script src="core/version/interpolate-filter.js"></script>
+<script src="home/home.js"></script>
+<script src="orders/orders.js"></script>
+<script src="common/i18n/translations.js"></script>
+<script src="common/services/user.js"></script>
+<!-- endinject -->
 <!-- endbuild -->
 
 </body>

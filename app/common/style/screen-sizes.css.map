@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "mappings": "AA8BA,IAAK;EAZD,gBAAgB,EAAE,wCAAuB;EACzC,4DACyB;IAU7B,IAAK;MATC,gBAAgB,EAAE,yCAAwB;EAE5C,8DACyB;IAM7B,IAAK;MALC,gBAAgB,EAAE,wCAAuB",
+  "sources": [
+    "screen-sizes.scss"
+  ],
+  "names": [],
+  "file": "screen-sizes.css"
+}
