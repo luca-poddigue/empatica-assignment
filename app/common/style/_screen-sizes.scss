@@ -1,0 +1,29 @@
+$small-breakpoint: 390;
+$medium-breakpoint: 650;
+
+@mixin screen-small() {
+  @media screen and (max-width: #{$small-breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin screen-medium() {
+  @media screen and (max-width: #{$medium-breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin screen-large() {
+  @media screen and (max-width: #{$small-breakpoint + 1}px) {
+    @content;
+  }
+}
+
+@mixin screen-custom($custom-breakpoint) {
+  @media screen and (max-width: #{$custom-breakpoint}px) {
+    @content;
+  }
+}
+
+
+

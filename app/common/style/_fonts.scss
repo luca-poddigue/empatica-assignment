@@ -1,4 +1,6 @@
-@mixin font-family($font-family, $font-name) {
+@import 'colors';
+
+@mixin font-family-declaration($font-family, $font-name) {
   @font-face {
     font-family: $font-family;
     src: url('../fonts/#{$font-name}/#{$font-name}.eot'); /* IE9 Compat Modes */
@@ -12,28 +14,9 @@
   }
 }
 
-$lato-font-family: 'Lato';
+@mixin font-family($family) {
+  font-family: $family, Helvetica, Arial, sans-serif;
+}
+
+$lato-font-family: 'Lato-Regular';
 $apex-font-family: 'Apex';
-
-@include font-family ($lato-font-family, 'Lato-Regular');
-@include font-family ($apex-font-family, 'Apex');
-
-body {
-  font-family: $lato-font-family, Helvetica, Arial, sans-serif;
-}
-
-// title
-h2 {
-  font-size: 42px;
-  font-family: $apex-font-family;
-}
-
-// subtitle
-h3 {
-  font-size: 32px;
-  font-family: $apex-font-family;
-}
-
-p {
-  font-size: 18px;
-}

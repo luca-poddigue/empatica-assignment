@@ -1,0 +1,52 @@
+main-view .nav-bar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+main-view .nav-bar a {
+    color: #FFF;
+    padding: 7px;
+  transition: 0.15s linear all;
+}
+
+main-view .nav-bar a:hover {
+  color: #e04972;
+}
+main-view .footer {
+  margin-top: 50px;
+  background-color: #EDEFF0;
+  color: #707070;
+  width: 100%;
+}
+
+main-view .footer .links {
+    position: relative;
+    text-align: center;
+    padding: 22px 20px;
+    font-size: 23px;
+  border-bottom: solid #707070 2px;
+}
+
+main-view .footer .links a {
+  color: #707070;
+  display: inline-block;
+  width: 25%;
+}
+
+main-view .footer .links a:hover {
+  color: #BC204B;
+}
+
+@media screen and (max-width: 650px) {
+  main-view .footer .links a {
+    width: 49%;
+  }
+}
+
+main-view .footer .copyright {
+    text-align: center;
+  padding: 33px 20px;
+}
+
+/*# sourceMappingURL=main-view.css.map */

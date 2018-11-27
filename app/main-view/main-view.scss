@@ -1,0 +1,56 @@
+@import '../common/style/colors';
+@import '../common/style/screen-sizes';
+@import '../common/style/fonts';
+
+main-view {
+
+  .nav-bar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    a {
+      color: $white;
+      padding: 7px;
+      transition: 0.15s linear all;
+
+      &:hover {
+        color: lighten($red, 15%);
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 50px;
+    background-color: $light-grey;
+    color: $dark-grey;
+    width: 100%;
+
+    .links {
+      position: relative;
+      text-align: center;
+      padding: 22px 20px;
+      font-size: 23px;
+      border-bottom: solid $dark-grey 2px;
+
+      a {
+        color: $dark-grey;
+        display: inline-block;
+        width: 25%;
+
+        &:hover {
+          color: $red;
+        }
+
+        @include screen-medium {
+          width: 49%;
+        }
+      }
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 33px 20px;
+    }
+  }
+}

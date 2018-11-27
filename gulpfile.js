@@ -14,7 +14,6 @@ const revReplace = require('gulp-rev-replace');
 const rev = require('gulp-rev');
 const babel = require('gulp-babel');
 const gulpInject = require('gulp-inject');
-const gulpNgdocs = require('gulp-ngdocs');
 
 
 const outputDir = 'dist';
@@ -128,18 +127,8 @@ gulp.task('copyImages', function () {
         .pipe(gulp.dest(outputDir));
 });
 
-gulp.task('ngdocs', [], function () {
-    return gulp.src([appDir + '/**/*.js',
-        '!' + appDir + '/lib/**/*'])
-        .pipe(gulpNgdocs.process({
-            html5Mode: false,
-            title: 'Empatica Docs'
-        }))
-        .pipe(gulp.dest(ngdocsDir));
-});
-
 gulp.task('build', function () {
-    return runSequence(['clean', 'ngdocs'], ['copyImages', 'copyFontFiles'], ['html', 'index'], 'revReplace');
+    return runSequence('clean', ['copyImages', 'copyFontFiles'], ['html', 'index'], 'revReplace');
 });
 
 gulp.task('assets', function () {

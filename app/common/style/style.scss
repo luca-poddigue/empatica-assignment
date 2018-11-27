@@ -1,0 +1,30 @@
+@import 'fonts';
+
+a {
+  @include font-family($apex-font-family);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@include font-family-declaration ($lato-font-family, 'Lato-Regular');
+@include font-family-declaration ($apex-font-family, 'Apex');
+
+body {
+  @include font-family($lato-font-family);
+  color: $black;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 42px;
+  @include font-family($apex-font-family);
+}
+
+h2 {
+  font-size: 32px;
+  @include font-family($apex-font-family);
+}
+
+p {
+  font-size: 18px;
+}

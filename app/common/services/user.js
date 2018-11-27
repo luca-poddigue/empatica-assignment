@@ -1,6 +1,6 @@
 angular
     .module('empatica')
-    .factory('userService', function userFactory($http) {
+    .factory('userService', function userFactory($http, $location, localStorageService) {
 
         const backendServerUrl = 'http://localhost:3000';
 
@@ -10,7 +10,21 @@ angular
             return $http({
                 method: 'POST',
                 url: backendServerUrl + '/login'
-            }).then(getDataFromResponse);
+            }).then(function (response) {
+                // In a real setting, the backend would also return an auth token for the user.
+                localStorageService.set('user', {
+                    userId: response.data
+                });
+            });
+        }
+
+        function logout() {
+            localStorageService.remove("user");
+            $location().url('/');
+        }
+
+        function userLoggedIn() {
+            return !!localStorageService.get('user');
         }
 
         function getUser(userId) {
@@ -36,6 +50,8 @@ angular
 
         return {
             login: () => login(),
+            logout: () => logout(),
+            userLoggedIn: () => userLoggedIn(),
             getUser: userId => getUser(userId),
             getUserOrders: userId => getUserOrders(userId),
             deleteUserOrder: orderId => deleteUserOrder(orderId)
