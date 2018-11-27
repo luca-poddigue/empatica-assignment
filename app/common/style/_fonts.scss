@@ -18,5 +18,11 @@
   font-family: $family, Helvetica, Arial, sans-serif;
 }
 
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 $lato-font-family: 'Lato-Regular';
 $apex-font-family: 'Apex';

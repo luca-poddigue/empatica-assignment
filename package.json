@@ -22,7 +22,6 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-csscomb": "^3.0.8",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^2.0.2",
     "gulp-inject": "^5.0.0",
@@ -42,13 +41,10 @@
     "protractor": "^5.4.1",
     "run-sequence": "^2.2.1"
   },
-  "local-web-server": {
-    "port": 8000,
-    "spa": "index.html"
-  },
   "scripts": {
     "start-backend": "cd backend && npm start",
-    "start": "cd app && ws --spa index.html",
+    "start-dist": "cd dist && ws --spa index.html --port 8001",
+    "start": "cd app && ws --spa index.html --port 8000",
     "test": "karma start karma.conf.js",
     "test-single-run": "npm test -- --single-run",
     "preprotractor": "npm run update-webdriver",

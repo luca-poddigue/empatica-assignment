@@ -34,7 +34,7 @@ home-page {
 
   .header {
     height: 600px;
-    background: url('images/homepage_hero-lg-xhdpi.jpg') no-repeat bottom;
+    background: url('/home/images/homepage_hero-lg-xhdpi.jpg') no-repeat bottom;
     background-size: cover;
 
     .title,
@@ -58,7 +58,7 @@ home-page {
     }
 
     @include screen-small {
-      background: url('images/homepage_hero-sm-xhdpi.jpg') no-repeat center;
+      background: url('/home/images/homepage_hero-sm-xhdpi.jpg') no-repeat center;
     }
   }
 

@@ -13,12 +13,6 @@ $medium-breakpoint: 650;
   }
 }
 
-@mixin screen-large() {
-  @media screen and (max-width: #{$small-breakpoint + 1}px) {
-    @content;
-  }
-}
-
 @mixin screen-custom($custom-breakpoint) {
   @media screen and (max-width: #{$custom-breakpoint}px) {
     @content;

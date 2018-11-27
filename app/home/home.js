@@ -7,6 +7,11 @@ angular.module('empatica')
     })
     .component('homePage', {
         templateUrl: 'home/home.html',
-        controller: function homeController() {
+        controller: function homeController(featureHelperService) {
+
+            const $ctrl = this;
+
+            $ctrl.svgSupported = () => featureHelperService.svg();
+
         }
     });

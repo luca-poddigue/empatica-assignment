@@ -1,4 +1,5 @@
 @import 'fonts';
+@import 'screen-sizes';
 
 a {
   @include font-family($apex-font-family);
@@ -27,4 +28,32 @@ h2 {
 
 p {
   font-size: 18px;
+}
+
+.data-block {
+  vertical-align: top;
+  max-width: 340px;
+  text-align: left;
+  display: inline-block;
+  background-color: $light-grey;
+  padding: 20px;
+  margin: 0 20px 20px 0;
+
+  @include screen-custom(900) {
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+    color: $red;
+  }
+
+  h4 {
+    margin: 20px 0 10px;
+  }
 }

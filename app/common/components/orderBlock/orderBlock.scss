@@ -1,0 +1,51 @@
+@import '../../style/colors';
+@import '../../style/fonts';
+
+order-block {
+
+  .items {
+    display: table;
+
+    .item {
+      display: table-row;
+    }
+
+    .name {
+      width: 100%;
+      padding: 0 20px 5px 0;
+      display: table-cell;
+    }
+
+    .value {
+      text-align: right;
+      display: table-cell;
+      font-weight: bold;
+
+      &.tracking-code {
+        min-width: 130px;
+        @include word-wrap();
+      }
+    }
+
+    &.total {
+      border-top: solid 2px $dark-grey;
+      margin-top: 20px;
+      padding-top: 10px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+
+  .delete-btn {
+    margin-top: 22px;
+
+    a {
+      color: $red-danger;
+      font-size: 14px;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}

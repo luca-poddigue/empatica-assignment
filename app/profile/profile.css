@@ -1,0 +1,27 @@
+profile-page {
+    display: block;
+    margin: 100px 220px 80px;
+}
+
+profile-page h1, profile-page h2 {
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 900px) {
+    profile-page {
+        margin: 100px 50px 80px;
+        text-align: center;
+    }
+
+    profile-page .profile .data-block {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    profile-page {
+        margin: 100px 10px 80px;
+    }
+}
+
+/*# sourceMappingURL=profile.css.map */

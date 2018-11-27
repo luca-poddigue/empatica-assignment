@@ -20,7 +20,6 @@ home-page .bw-btn:hover {
     color: #333;
     background-color: #FFF;
 }
-
 home-page .red-btn {
     outline: none;
     border-radius: 5px;
@@ -43,10 +42,9 @@ home-page .red-btn:hover {
     color: #BC204B;
     background-color: #FFF;
 }
-
 home-page .header {
     height: 600px;
-    background: url("images/homepage_hero-lg-xhdpi.jpg") no-repeat bottom;
+    background: url("/home/images/homepage_hero-lg-xhdpi.jpg") no-repeat bottom;
     background-size: cover;
 }
 
@@ -74,10 +72,9 @@ home-page .header .text {
 
 @media screen and (max-width: 390px) {
     home-page .header {
-        background: url("images/homepage_hero-sm-xhdpi.jpg") no-repeat center;
+        background: url("/home/images/homepage_hero-sm-xhdpi.jpg") no-repeat center;
     }
 }
-
 home-page .content {
     padding: 50px 140px 0;
 }

@@ -10,12 +10,27 @@ main-view {
     right: 8px;
 
     a {
-      color: $white;
+      color: $black;
       padding: 7px;
       transition: 0.15s linear all;
 
       &:hover {
-        color: lighten($red, 15%);
+        color: $light-red;
+      }
+
+      &.current {
+        color: $light-red;
+        cursor: default;
+      }
+    }
+
+    &.home {
+      a {
+        color: $white;
+
+        &:hover {
+          color: $light-red;
+        }
       }
     }
   }

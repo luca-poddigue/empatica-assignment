@@ -1,113 +1,29 @@
-# `angular-seed` — the seed for AngularJS apps
+# Empatica assignment
 
-This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
-to quickly bootstrap your angular webapp projects and dev environment for these projects.
-
-The seed contains a sample AngularJS application and is preconfigured to install the AngularJS
-framework and a bunch of development and testing tools for instant web development gratification.
-
-The seed app doesn't do much, just shows how to wire two controllers and views together.
-
+Project for the coding assignment.
 
 ## Getting Started
 
-To get you started you can simply clone the `angular-seed` repository and install the dependencies:
+The project contains both the fake backend and the frontend. I attached the backend also because I needed to tweak it a bit in order to make it return appropriate CORS headers without whom I couldn't make requests from a frontend running on another port.
 
-### Prerequisites
+### Backend
 
-You need git to clone the `angular-seed` repository. You can get git from [here][git].
+* Move to folder `backend`.
+* Install the dependencies with `npm install`.
+* Run the server with `npm start` if you are in the backend folder, or with `npm run start-backend` if you are in the project root. The server binds by default to port `3000`.
 
-We also use a number of Node.js tools to initialize and test `angular-seed`. You must have Node.js
-and its package manager (npm) installed. You can get them from [here][node].
+### Frontend
 
-### Clone `angular-seed`
+* Install the dependencies with `npm install`.
+* Run the frontend server with `npm start`. The server binds by default to port `8000`.
 
-Clone the `angular-seed` repository using git:
+## Build
 
-```
-git clone https://github.com/angular/angular-seed.git
-cd angular-seed
-```
+The provided `gulpfile` contains the build configuration to generate a distributable version of the app. More details can be found directly within the build script.
 
-If you just want to start a new project without the `angular-seed` commit history then you can do:
+To build the app ensure Gulp is installed globally and run `gulp build`. A `dist` folder will be generated with all the required files.
 
-```
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
-
-### Install Dependencies
-
-We have two kinds of dependencies in this project: tools and AngularJS framework code. The tools
-help us manage and test the application.
-
-* We get the tools we depend upon and the AngularJS code via `npm`, the [Node package manager][npm].
-* In order to run the end-to-end tests, you will also need to have the
-  [Java Development Kit (JDK)][jdk] installed on your machine. Check out the section on
-  [end-to-end testing](#e2e-testing) for more info.
-
-We have preconfigured `npm` to automatically copy the downloaded AngularJS files to `app/lib` so we
-can simply do:
-
-```
-npm install
-```
-
-Behind the scenes this will also call `npm run copy-libs`, which copies the AngularJS files and
-other front end dependencies. After that, you should find out that you have two new directories in
-your project.
-
-* `node_modules` - contains the npm packages for the tools we need
-* `app/lib` - contains the AngularJS framework files and other front end dependencies
-
-*Note copying the AngularJS files from `node_modules` to `app/lib` makes it easier to serve the
-files by a web server.*
-
-### Run the Application
-
-We have preconfigured the project with a simple development web server. The simplest way to start
-this server is:
-
-```
-npm start
-```
-
-Now browse to the app at [`localhost:8000/index.html`][local-app-url].
-
-
-## Directory Layout
-
-```
-app/                  --> all of the source files for the application
-  app.css               --> default stylesheet
-  core/                 --> all app specific modules
-    version/              --> version related components
-      version.js                 --> version module declaration and basic "version" value service
-      version_test.js            --> "version" value service tests
-      version-directive.js       --> custom directive that returns the current app version
-      version-directive_test.js  --> version directive tests
-      interpolate-filter.js      --> custom interpolation filter
-      interpolate-filter_test.js --> interpolate filter tests
-  view1/                --> the view1 view template and logic
-    view1.html            --> the partial template
-    view1.js              --> the controller logic
-    view1_test.js         --> tests of the controller
-  view2/                --> the view2 view template and logic
-    view2.html            --> the partial template
-    view2.js              --> the controller logic
-    view2_test.js         --> tests of the controller
-  app.js                --> main application module
-  index.html            --> app layout file (the main html template file of the app)
-  index-async.html      --> just like index.html, but loads js files asynchronously
-e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
-karma.conf.js         --> config file for running unit tests with Karma
-package.json          --> Node.js specific metadata, including development tools dependencies
-package-lock.json     --> Npm specific metadata, including versions of installed development tools dependencies
-```
-
+To run a frontend server that exposes the build app, use `npm run start-dist`. The server binds by default to port `8001`.
 
 ## Testing
 

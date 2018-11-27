@@ -1,7 +1,7 @@
 a {
   font-family: "Apex", Helvetica, Arial, sans-serif;
   cursor: pointer;
-  text-decoration: none;
+    text-decoration: none;
 }
 
 @font-face {
@@ -11,7 +11,7 @@ a {
   src: url("../fonts/Lato-Regular/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato-Regular/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular/Lato-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
-  text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
 }
 @font-face {
   font-family: "Apex";
@@ -20,26 +20,56 @@ a {
   src: url("../fonts/Apex/Apex.eot?#iefix") format("embedded-opentype"), url("../fonts/Apex/Apex.woff2") format("woff2"), url("../fonts/Apex/Apex.woff") format("woff"), url("../fonts/Apex/Apex.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
-  text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
 }
 body {
   font-family: "Lato-Regular", Helvetica, Arial, sans-serif;
   color: #333;
-  font-size: 16px;
+    font-size: 16px;
 }
 
 h1 {
   font-size: 42px;
-  font-family: "Apex", Helvetica, Arial, sans-serif;
+    font-family: "Apex", Helvetica, Arial, sans-serif;
 }
 
 h2 {
   font-size: 32px;
-  font-family: "Apex", Helvetica, Arial, sans-serif;
+    font-family: "Apex", Helvetica, Arial, sans-serif;
 }
 
 p {
-  font-size: 18px;
+    font-size: 18px;
+}
+
+.data-block {
+    vertical-align: top;
+    max-width: 340px;
+    text-align: left;
+    display: inline-block;
+    background-color: #EDEFF0;
+    padding: 20px;
+    margin: 0 20px 20px 0;
+}
+
+@media screen and (max-width: 900px) {
+    .data-block {
+        display: block;
+        margin: 0 auto 10px;
+    }
+}
+
+.data-block h2 {
+    margin: 0;
+}
+
+.data-block h3 {
+    margin: 0;
+    color: #BC204B;
+}
+
+.data-block h4 {
+    margin: 20px 0 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,7 @@
-<div class="nav-bar">
-    <a ng-if="$ctrl.userLoggedIn()" ng-bind="'APP_PROFILE' | translate" href="/profile"></a>
+<div class="nav-bar" ng-class="{'home': $ctrl.isHomePage()}">
+    <a ng-if="!$ctrl.isHomePage()" ng-bind="'APP_HOME' | translate" href="/"></a>
+    <a ng-if="$ctrl.userLoggedIn()" ng-bind="'APP_PROFILE' | translate" href="/profile"
+       ng-class="{'current': $ctrl.isCurrentPage('/profile')}"></a>
     <a ng-if="!$ctrl.userLoggedIn()" ng-bind="'APP_LOGIN' | translate" ng-click="$ctrl.login()"></a>
     <a ng-if="$ctrl.userLoggedIn()" ng-bind="'APP_LOGOUT' | translate" ng-click="$ctrl.logout()"></a>
 </div>
