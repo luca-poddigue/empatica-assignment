@@ -72,4 +72,62 @@ p {
     margin: 20px 0 10px;
 }
 
+.danger-btn {
+    outline: none;
+    border-radius: 5px;
+    border: solid 2px;
+    transition: 0.15s linear all;
+    padding: 8px 26px;
+    background-color: #FFF;
+    color: #ec2121;
+}
+
+.danger-btn:hover {
+    cursor: pointer;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.danger-btn:disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: #EDEFF0;
+    color: #707070;
+    border-color: #707070;
+}
+
+.danger-btn:hover {
+    background-color: #ec2121;
+    border-color: #ec2121;
+    color: #FFF;
+}
+
+.default-btn {
+    outline: none;
+    border-radius: 5px;
+    border: solid 2px;
+    transition: 0.15s linear all;
+    padding: 8px 26px;
+    background-color: #FFF;
+    border-color: #333;
+    color: #333;
+}
+
+.default-btn:hover {
+    cursor: pointer;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.default-btn:disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: #EDEFF0;
+    color: #707070;
+    border-color: #707070;
+}
+
+.default-btn:hover {
+    background-color: #333;
+    color: #FFF;
+}
+
 /*# sourceMappingURL=style.css.map */

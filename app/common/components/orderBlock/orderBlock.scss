@@ -1,10 +1,12 @@
 @import '../../style/colors';
 @import '../../style/fonts';
+@import '../../style/screen-sizes';
 
 order-block {
 
   .items {
     display: table;
+    vertical-align: top;
 
     .item {
       display: table-row;
@@ -22,8 +24,10 @@ order-block {
       font-weight: bold;
 
       &.tracking-code {
-        min-width: 130px;
-        @include word-wrap();
+        @include screen-small() {
+          min-width: 130px;
+          @include word-wrap();
+        }
       }
     }
 

@@ -1,0 +1,30 @@
+/**
+  Generates CSS to set a background image to a block.
+  @param $image-url-prefix The url of the image, without the resolution suffix and the format (e.g. -sm-xhdpi.jpg).
+  @param $image-format The image format (e.g. jpg).
+ */
+@mixin responsive-background-image($image-url-prefix, $image-format:'jpg') {
+
+  background-image: url('#{$image-url-prefix}-lg-hdpi.#{$image-format}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  @media(-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    background-image: url('#{$image-url-prefix}-lg-xhdpi.#{$image-format}');
+  }
+
+  @include screen-custom(850) {
+    background-position: 70% bottom;
+  }
+
+  @include screen-small {
+    background-image: url('#{$image-url-prefix}-sm-hdpi.#{$image-format}');
+
+    @media(-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url('#{$image-url-prefix}-sm-xhdpi.#{$image-format}');
+    }
+  }
+}

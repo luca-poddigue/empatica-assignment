@@ -1,0 +1,7 @@
+@import "../../style/colors";
+
+$spinkit-spinner-margin: 0;
+$spinkit-size: 40px;
+$spinkit-spinner-color: $red;
+
+@import '../../../lib/spinkit/scss/spinners/6-chasing-dots';

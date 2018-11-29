@@ -2,7 +2,8 @@ angular.module('empatica', [
     'pascalprecht.translate',
     'ngRoute',
     'ngSanitize',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'ngAnimate'
 ]).config(function ($locationProvider, $routeProvider, localStorageServiceProvider) {
     $locationProvider.html5Mode(true);
     localStorageServiceProvider.setPrefix('empatica_');

@@ -1,0 +1,75 @@
+modal {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(112, 112, 112, 0.3);
+}
+
+modal .modal-content {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    margin: auto;
+    max-width: 600px;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 10px 15px 13px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 650px) {
+    modal .modal-content {
+        top: 35px;
+        left: 10px;
+        right: 10px;
+    }
+}
+
+modal .modal-content .modal-title {
+    margin-bottom: 10px;
+    color: #BC204B;
+}
+
+modal .modal-content .modal-body {
+    margin-bottom: 23px;
+}
+
+modal .modal-content .modal-footer {
+    position: relative;
+    text-align: right;
+}
+
+modal .modal-content .modal-footer button {
+    margin-right: 10px;
+}
+
+modal .modal-content .modal-footer button:last-child {
+    margin-right: 0;
+}
+
+modal .modal-content .modal-footer spinner {
+    position: absolute;
+    top: -3px;
+    left: 6px;
+}
+
+modal.ng-enter {
+    transition: 0.2s ease-out transform, 0.2s ease-out opacity;
+}
+
+modal.ng-enter .modal-content {
+    transition: 0.2s ease-out transform, 0.2s ease-out opacity;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+modal.ng-enter.ng-enter-active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*# sourceMappingURL=modal.css.map */

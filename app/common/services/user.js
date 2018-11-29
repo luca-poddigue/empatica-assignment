@@ -78,11 +78,11 @@ angular
         /**
          * Deletes the order identified by the order id.
          * @param orderId The id of the order.
-         * @returns {Promise<null>}
+         * @returns {Promise<object>} The deleted order.
          */
-        function deleteUserOrder(orderId) {
+        function cancelUserOrder(orderId) {
             return $http({
-                method: 'GET',
+                method: 'DELETE',
                 url: backendServerUrl + '/orders/' + orderId
             }).then(getDataFromResponse);
         }
@@ -93,7 +93,7 @@ angular
             userLoggedIn: () => userLoggedIn(),
             getUser: () => getUser(),
             getUserOrders: () => getUserOrders(),
-            deleteUserOrder: orderId => deleteUserOrder(orderId)
+            cancelUserOrder: orderId => cancelUserOrder(orderId)
         };
 
     });

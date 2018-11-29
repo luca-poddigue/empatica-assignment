@@ -8,6 +8,17 @@ profile-page {
   display: block;
   margin: 100px 220px 80px;
 
+  spinner {
+    position: relative;
+    top: -2px;
+  }
+
+  .profile {
+    spinner {
+      top: -10px;
+    }
+  }
+
   h1, h2 {
     margin-bottom: 15px;
   }
@@ -21,10 +32,20 @@ profile-page {
         text-align: center;
       }
     }
+
+    spinner {
+      .sk-chasing-dots {
+        margin: auto;
+      }
+    }
   }
 
   @include screen-medium() {
     margin: 100px 10px 80px;
+  }
+
+  .info-box {
+    max-width: 700px;
   }
 
 }

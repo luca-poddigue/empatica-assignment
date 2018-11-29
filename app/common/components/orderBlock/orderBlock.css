@@ -1,5 +1,6 @@
 order-block .items {
     display: table;
+    vertical-align: top;
 }
 
 order-block .items .item {
@@ -18,11 +19,13 @@ order-block .items .value {
     font-weight: bold;
 }
 
-order-block .items .value.tracking-code {
-    min-width: 130px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
+@media screen and (max-width: 390px) {
+    order-block .items .value.tracking-code {
+        min-width: 130px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
 }
 
 order-block .items.total {
@@ -32,7 +35,6 @@ order-block .items.total {
     font-weight: bold;
     font-size: 20px;
 }
-
 order-block .delete-btn {
     margin-top: 22px;
 }

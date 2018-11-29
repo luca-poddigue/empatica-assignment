@@ -3,6 +3,7 @@ var express = require("express");
 var app = express();
 
 app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Methods", "*");
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
@@ -85,19 +86,20 @@ app.post("/login", function(req, res) {
 });
 
 app.get("/users/:id", function(req, res) {
-  res.json(users[+req.params["id"]]);
+  setTimeout(() => res.json(users[+req.params["id"]]), 2000);
+  ;
 });
 
 app.get("/users/:id/orders", function(req, res) {
-  res.json(userOrders);
+  setTimeout(() => res.json(userOrders), 3000);
 });
 
 app.delete("/orders/:id", function(req, res) {
-  res.json({
-    orderId: +req.params["id"],
-    status: "cancelled",
-    order: orders[+req.params["id"]]
-  });
+  setTimeout(() => res.json({
+      orderId: +req.params["id"],
+      status: "cancelled",
+      order: orders[+req.params["id"]]
+  }), 2000);
 });
 
 console.log("Server is starting at localhost:3000");

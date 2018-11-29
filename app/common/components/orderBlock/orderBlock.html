@@ -1,9 +1,9 @@
 <div class="data-block">
     <h3 ng-bind="::$ctrl.order.ref"></h3>
-    <h2 ng-bind="::'PROFILE_STATUS_'+$ctrl.order.status.toUpperCase() | translate"></h2>
+    <h2 ng-bind="::'ORDER_STATUS_'+$ctrl.order.status.toUpperCase() | translate"></h2>
 
     <div class="items">
-        <h4 ng-bind="::'PROFILE_ORDERED_ITEMS' | translate"></h4>
+        <h4 ng-bind="::'ORDER_ORDERED_ITEMS' | translate"></h4>
         <div ng-repeat="item in $ctrl.order.items track by $index" class="item">
             <span class="name" ng-bind="::item.name"></span>
             <span class="value" ng-bind="::item.amount | currency : '$'"></span>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="items">
-        <h4 ng-bind="::'PROFILE_DISCOUNTS' | translate"></h4>
+        <h4 ng-bind="::'ORDER_DISCOUNTS' | translate"></h4>
         <div ng-repeat="discount in $ctrl.order.discounts track by $index" class="item">
             <span class="name" ng-bind="::discount.name"></span>
             <span class="value" ng-bind="'-' + (discount.amount | currency : '$')"></span>
@@ -20,31 +20,45 @@
 
     <div class="items total">
         <div class="item">
-            <span class="name" ng-bind="::'PROFILE_TOTAL' | translate"></span>
+            <span class="name" ng-bind="::'ORDER_TOTAL' | translate"></span>
             <span class="value" ng-bind="$ctrl.order.itemsTotal - $ctrl.order.discountsTotal | currency : '$'"></span>
         </div>
     </div>
 
     <div class="tracking" ng-if="$ctrl.order.tracking">
         <div class="items">
-            <h4 ng-bind="::'PROFILE_TRACKING' | translate"></h4>
+            <h4 ng-bind="::'ORDER_TRACKING' | translate"></h4>
             <div class="item">
-                <span class="name" ng-bind="::'PROFILE_CARRIER' | translate"></span>
+                <span class="name" ng-bind="::'ORDER_CARRIER' | translate"></span>
                 <span class="value" ng-bind="::$ctrl.order.tracking.carrier"></span>
             </div>
             <div class="item">
-                <span class="name" ng-bind="::'PROFILE_TRACKING_CODE' | translate"></span>
+                <span class="name" ng-bind="::'ORDER_TRACKING_CODE' | translate"></span>
                 <span class="value tracking-code" ng-bind="::$ctrl.order.tracking.trackingCode"></span>
             </div>
             <div class="item">
-                <span class="name" ng-bind="::'PROFILE_STATUS' | translate"></span>
+                <span class="name" ng-bind="::'ORDER_STATUS' | translate"></span>
                 <span class="value"
-                      ng-bind="::'PROFILE_STATUS_'+$ctrl.order.tracking.status.toUpperCase() | translate"></span>
+                      ng-bind="::'ORDER_STATUS_'+$ctrl.order.tracking.status.toUpperCase() | translate"></span>
             </div>
         </div>
     </div>
 
     <div class="delete-btn">
-        <a ng-click="$ctrl.showCancelModal()" ng-bind="::'PROFILE_CANCEL_ORDER' | translate"></a>
+        <a ng-click="$ctrl.setCancelOrderModalVisible(true)" ng-bind="::'ORDER_CANCEL_ORDER' | translate"></a>
     </div>
+
+    <modal ng-if="$ctrl.cancelOrderModalVisible"
+           modal-title="{{::('ORDER_ORDER' | translate) + ' ' + $ctrl.order.ref}}">
+        <modal-body>
+            <p ng-bind="::'ORDER_CANCEL_CONFIRMATION' | translate"></p>
+        </modal-body>
+        <modal-footer>
+            <spinner promise="$ctrl.cancelOrderPromise"></spinner>
+            <button ng-disabled="$ctrl.cancellingOrder" ng-bind="::'CLOSE' | translate" class="default-btn"
+                    ng-click="$ctrl.setCancelOrderModalVisible(false)"></button>
+            <button ng-disabled="$ctrl.cancellingOrder" ng-bind="::'ORDER_CANCEL' | translate" class="danger-btn"
+                    ng-click="$ctrl.cancelOrder()"></button>
+        </modal-footer>
+    </modal>
 </div>

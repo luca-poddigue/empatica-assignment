@@ -1,0 +1,76 @@
+@import '../../style/colors';
+@import '../../style/screen-sizes';
+
+modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(112, 112, 112, 0.3);
+
+  .modal-content {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    margin: auto;
+    max-width: 600px;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 10px 15px 13px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+    @include screen-medium() {
+      top: 35px;
+      left: 10px;
+      right: 10px;
+    }
+
+    .modal-title {
+      margin-bottom: 10px;
+      color: $red;
+    }
+
+    .modal-body {
+      margin-bottom: 23px;
+    }
+
+    .modal-footer {
+      position: relative;
+      text-align: right;
+
+      button {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      spinner {
+        position: absolute;
+        top: -3px;
+        left: 6px;
+      }
+    }
+  }
+
+  &.ng-enter {
+    transition: 0.2s ease-out transform, 0.2s ease-out opacity;
+
+    .modal-content {
+      transition: 0.2s ease-out transform, 0.2s ease-out opacity;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+
+  &.ng-enter.ng-enter-active {
+    .modal-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

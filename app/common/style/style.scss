@@ -1,5 +1,6 @@
 @import 'fonts';
 @import 'screen-sizes';
+@import 'buttons';
 
 a {
   @include font-family($apex-font-family);
@@ -55,5 +56,29 @@ p {
 
   h4 {
     margin: 20px 0 10px;
+  }
+}
+
+.danger-btn {
+  @include btn-common();
+  background-color: $white;
+  color: $red-danger;
+
+  &:hover {
+    background-color: $red-danger;
+    border-color: $red-danger;
+    color: $white;
+  }
+}
+
+.default-btn {
+  @include btn-common();
+  background-color: $white;
+  border-color: $black;
+  color: $black;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
   }
 }

@@ -4,7 +4,7 @@ Project for the coding assignment.
 
 ## Getting Started
 
-The project contains both the fake backend and the frontend. I attached the backend also because I needed to tweak it a bit in order to make it return appropriate CORS headers without whom I couldn't make requests from a frontend running on another port.
+The project contains both the fake backend and the frontend. I pushed the backend because I needed to tweak it a bit in order to make it return appropriate CORS headers without whom I couldn't make requests from a frontend running on another port. I also slightly slowed down artificially some of the endpoints, to demonstrate how the loading spinner works.
 
 ### Backend
 

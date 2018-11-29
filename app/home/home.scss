@@ -1,6 +1,7 @@
 @import '../common/style/colors';
 @import '../common/style/screen-sizes';
 @import '../common/style/buttons';
+@import '../common/style/images';
 
 home-page {
 
@@ -11,6 +12,7 @@ home-page {
     background-color: transparent;
     padding: 8px 35px;
     border-color: $white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 
     &:hover {
       color: $black;
@@ -25,6 +27,7 @@ home-page {
     background-color: $red;
     padding: 8px 26px;
     border-color: $red;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 
     &:hover {
       color: $red;
@@ -32,10 +35,13 @@ home-page {
     }
   }
 
+  /*
+  NOTE: The responsive image mixin works as it should, but in this specific case the lower resolution image is just a copy of the high resolution one, because the first did not look good on large screen. So, there's the displayed image is always the same, i.e. the high res one.
+   */
   .header {
     height: 600px;
-    background: url('/home/images/homepage_hero-lg-xhdpi.jpg') no-repeat bottom;
-    background-size: cover;
+    @include responsive-background-image('/home/images/homepage_hero');
+
 
     .title,
     .subtitle {
@@ -46,19 +52,11 @@ home-page {
       padding: 100px;
     }
 
-    @include screen-custom(850) {
-      background-position: 70% bottom;
-    }
-
     @include screen-medium {
       .text {
         padding: 30px;
         text-align: center;
       }
-    }
-
-    @include screen-small {
-      background: url('/home/images/homepage_hero-sm-xhdpi.jpg') no-repeat center;
     }
   }
 

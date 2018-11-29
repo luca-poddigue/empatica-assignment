@@ -1,6 +1,8 @@
 angular.module('empatica').config(function ($translateProvider) {
 
     $translateProvider.translations('en', {
+        'CLOSE': 'Close',
+
         'APP_HOME': 'Home',
         'APP_LOGIN': 'Login',
         'APP_LOGOUT': 'Logout',
@@ -20,16 +22,22 @@ angular.module('empatica').config(function ($translateProvider) {
         'PROFILE_NAME': 'Name',
         'PROFILE_ORDERS': 'Orders',
         'PROFILE_PERSONAL_PROFILE': 'Personal profile',
-        'PROFILE_STATUS_PAID': 'Paid',
-        'PROFILE_STATUS_IN_TRANSIT': 'In transit',
-        'PROFILE_ORDERED_ITEMS': 'Ordered items',
-        'PROFILE_DISCOUNTS': 'Discounts',
-        'PROFILE_TOTAL': 'Total',
-        'PROFILE_TRACKING': 'Tracking',
-        'PROFILE_CANCEL_ORDER': 'Cancel order',
         'PROFILE_STATUS': 'Status',
-        'PROFILE_TRACKING_CODE': 'Tracking code',
-        'PROFILE_CARRIER': 'Carrier'
+        'PROFILE_NO_ORDERS': 'Looks like you don\'t have any order yet.<br>Check out our marketplace and discover our full offer of life-saving products.',
+
+        'ORDER_STATUS_PAID': 'Paid',
+        'ORDER_STATUS_IN_TRANSIT': 'In transit',
+        'ORDER_ORDERED_ITEMS': 'Ordered items',
+        'ORDER_DISCOUNTS': 'Discounts',
+        'ORDER_TOTAL': 'Total',
+        'ORDER_TRACKING': 'Tracking',
+        'ORDER_CANCEL_ORDER': 'Cancel order',
+        'ORDER_STATUS': 'Status',
+        'ORDER_TRACKING_CODE': 'Tracking code',
+        'ORDER_CARRIER': 'Carrier',
+        'ORDER_CANCEL': 'Cancel order',
+        'ORDER_ORDER': 'Order',
+        'ORDER_CANCEL_CONFIRMATION': 'Are you sure you want to delete your order?'
     });
 
     $translateProvider.preferredLanguage('en');

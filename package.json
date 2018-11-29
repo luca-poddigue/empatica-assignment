@@ -4,13 +4,14 @@
   "repository": "https://github.com/luca-poddigue/empatica-assignment",
   "dependencies": {
     "angular": "^1.7.5",
+    "angular-animate": "^1.7.5",
     "angular-loader": "^1.7.5",
     "angular-local-storage": "^0.7.1",
     "angular-route": "^1.7.5",
     "angular-sanitize": "^1.7.5",
     "angular-translate": "^2.18.1",
     "html5-boilerplate": "0.0.1",
-    "jquery": "^3.3.1"
+    "spinkit": "^1.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -49,7 +50,7 @@
     "test-single-run": "npm test -- --single-run",
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js",
-    "copy-libs": "cpx \"node_modules/{angular,angular-*,jquery,html5-boilerplate/dist}/**/*\" app/lib -C",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,spinkit,html5-boilerplate/dist}/**/*\" app/lib -C",
     "postinstall": "npm run copy-libs"
   }
 }
