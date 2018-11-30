@@ -49,6 +49,7 @@
     "test": "karma start karma.conf.js",
     "test-single-run": "npm test -- --single-run",
     "preprotractor": "npm run update-webdriver",
+    "update-webdriver": "webdriver-manager update --gecko false",
     "protractor": "protractor e2e-tests/protractor.conf.js",
     "copy-libs": "cpx \"node_modules/{angular,angular-*,spinkit,html5-boilerplate/dist}/**/*\" app/lib -C",
     "postinstall": "npm run copy-libs"

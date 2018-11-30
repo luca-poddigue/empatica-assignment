@@ -2,15 +2,15 @@
 
 <div class="profile">
 
-    <spinner promise="$ctrl.userPromise"></spinner>
+    <spinner id="user-spinner" promise="$ctrl.userPromise"></spinner>
 
-    <div ng-if="$ctrl.user">
+    <div ng-if="$ctrl.user" id="name">
         <div class="data-block">
             <h3 ng-bind="::'PROFILE_NAME' | translate"></h3>
             <h2 ng-bind="$ctrl.user.firstName + ' ' + $ctrl.user.lastName"></h2>
         </div>
 
-        <div class="data-block">
+        <div class="data-block" id="email">
             <h3 ng-bind="::'PROFILE_EMAIL' | translate"></h3>
             <h2 ng-bind="::$ctrl.user.email"></h2>
         </div>
@@ -19,7 +19,7 @@
 
 <h2 ng-bind="::'PROFILE_ORDERS' | translate"></h2>
 
-<spinner promise="$ctrl.userOrdersPromise"></spinner>
+<spinner id="user-orders-spinner" promise="$ctrl.userOrdersPromise"></spinner>
 
 <div>
     <order-block ng-repeat="order in $ctrl.orders" order="order"

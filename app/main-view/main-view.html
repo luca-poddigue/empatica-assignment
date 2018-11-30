@@ -1,9 +1,9 @@
-<div class="nav-bar" ng-class="{'home': $ctrl.isHomePage()}">
-    <a ng-if="!$ctrl.isHomePage()" ng-bind="'APP_HOME' | translate" href="/"></a>
-    <a ng-if="$ctrl.userLoggedIn()" ng-bind="'APP_PROFILE' | translate" href="/profile"
+<div id="nav-bar" class="nav-bar" ng-class="{'home': $ctrl.isHomePage()}">
+    <a id="home" ng-if="!$ctrl.isHomePage()" ng-bind="'APP_HOME' | translate" href="/"></a>
+    <a id="profile" ng-if="$ctrl.userLoggedIn()" ng-bind="'APP_PROFILE' | translate" href="/profile"
        ng-class="{'current': $ctrl.isCurrentPage('/profile')}"></a>
-    <a ng-if="!$ctrl.userLoggedIn()" ng-bind="'APP_LOGIN' | translate" ng-click="$ctrl.login()"></a>
-    <a ng-if="$ctrl.userLoggedIn()" ng-bind="'APP_LOGOUT' | translate" ng-click="$ctrl.logout()"></a>
+    <a id="login" ng-if="!$ctrl.userLoggedIn()" ng-bind="'APP_LOGIN' | translate" ng-click="$ctrl.login()"></a>
+    <a id="logout" ng-if="$ctrl.userLoggedIn()" ng-bind="'APP_LOGOUT' | translate" ng-click="$ctrl.logout()"></a>
 </div>
 
 <div ng-view class="main-view">

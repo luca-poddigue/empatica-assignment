@@ -1,5 +1,5 @@
 <div class="data-block">
-    <h3 ng-bind="::$ctrl.order.ref"></h3>
+    <h3 class="order-ref" ng-bind="::$ctrl.order.ref"></h3>
     <h2 ng-bind="::'ORDER_STATUS_'+$ctrl.order.status.toUpperCase() | translate"></h2>
 
     <div class="items">
@@ -48,16 +48,17 @@
         <a ng-click="$ctrl.setCancelOrderModalVisible(true)" ng-bind="::'ORDER_CANCEL_ORDER' | translate"></a>
     </div>
 
-    <modal ng-if="$ctrl.cancelOrderModalVisible"
+    <modal class="cancel-order-modal" ng-if="$ctrl.cancelOrderModalVisible"
            modal-title="{{::('ORDER_ORDER' | translate) + ' ' + $ctrl.order.ref}}">
         <modal-body>
             <p ng-bind="::'ORDER_CANCEL_CONFIRMATION' | translate"></p>
         </modal-body>
         <modal-footer>
             <spinner promise="$ctrl.cancelOrderPromise"></spinner>
-            <button ng-disabled="$ctrl.cancellingOrder" ng-bind="::'CLOSE' | translate" class="default-btn"
+            <button ng-disabled="$ctrl.cancellingOrder" ng-bind="::'CLOSE' | translate" class="default-btn close"
                     ng-click="$ctrl.setCancelOrderModalVisible(false)"></button>
-            <button ng-disabled="$ctrl.cancellingOrder" ng-bind="::'ORDER_CANCEL' | translate" class="danger-btn"
+            <button ng-disabled="$ctrl.cancellingOrder" ng-bind="::'ORDER_CANCEL' | translate"
+                    class="danger-btn cancel-order"
                     ng-click="$ctrl.cancelOrder()"></button>
         </modal-footer>
     </modal>
