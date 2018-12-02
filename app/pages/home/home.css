@@ -20,7 +20,6 @@ home-page .bw-btn {
     background-color: transparent;
     padding: 8px 35px;
     border-color: #FFF;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 home-page .bw-btn:hover {
@@ -39,6 +38,7 @@ home-page .bw-btn:disabled {
 home-page .bw-btn:hover {
     color: #333;
     background-color: #FFF;
+    text-shadow: none;
 }
 
 home-page .red-btn {
@@ -52,7 +52,6 @@ home-page .red-btn {
     background-color: #BC204B;
     padding: 8px 26px;
     border-color: #BC204B;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 home-page .red-btn:hover {
@@ -71,11 +70,12 @@ home-page .red-btn:disabled {
 home-page .red-btn:hover {
     color: #BC204B;
     background-color: #FFF;
+    text-shadow: none;
 }
 
 home-page .header {
     height: 600px;
-    background-image: url("/home/images/homepage_hero-lg-hdpi.jpg");
+    background-image: url("/pages/home/images/homepage_hero-lg-hdpi.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -83,7 +83,7 @@ home-page .header {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     home-page .header {
-        background-image: url("/home/images/homepage_hero-lg-xhdpi.jpg");
+        background-image: url("/pages/home/images/homepage_hero-lg-xhdpi.jpg");
     }
 }
 
@@ -95,13 +95,13 @@ home-page .header {
 
 @media screen and (max-width: 390px) {
     home-page .header {
-        background-image: url("/home/images/homepage_hero-sm-hdpi.jpg");
+        background-image: url("/pages/home/images/homepage_hero-sm-hdpi.jpg");
     }
 }
 
 @media screen and (max-width: 390px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 390px) and (min-resolution: 192dpi) {
     home-page .header {
-        background-image: url("/home/images/homepage_hero-sm-xhdpi.jpg");
+        background-image: url("/pages/home/images/homepage_hero-sm-xhdpi.jpg");
     }
 }
 

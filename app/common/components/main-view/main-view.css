@@ -7,7 +7,6 @@ main-view .nav-bar {
 main-view .nav-bar a {
     color: #333;
     padding: 7px;
-    transition: 0.15s linear all;
 }
 
 main-view .nav-bar a:hover {

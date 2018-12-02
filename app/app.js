@@ -9,4 +9,4 @@ angular.module('empatica', [
     localStorageServiceProvider.setPrefix('empatica_');
 
     $routeProvider.otherwise({redirectTo: '/'});
-});
+}).constant('backendServerUrl', 'http://localhost:3000');

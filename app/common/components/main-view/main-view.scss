@@ -1,6 +1,6 @@
-@import '../common/style/colors';
-@import '../common/style/screen-sizes';
-@import '../common/style/fonts';
+@import '../../style/colors';
+@import '../../style/screen-sizes';
+@import '../../style/fonts';
 
 main-view {
 
@@ -12,7 +12,6 @@ main-view {
     a {
       color: $black;
       padding: 7px;
-      transition: 0.15s linear all;
 
       &:hover {
         color: $light-red;

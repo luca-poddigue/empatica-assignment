@@ -8,13 +8,13 @@
 
 <div class="content">
     <div class="intro">
-        <img ng-if="$ctrl.svgSupported()" class="logo" ng-src="home/images/embrace_logo.svg">
-        <img ng-if="!$ctrl.svgSupported()" class="logo" ng-src="home/images/embrace_logo.png">
+        <img ng-if="$ctrl.svgSupported()" class="logo" ng-src="pages/home/images/embrace_logo.svg">
+        <img ng-if="!$ctrl.svgSupported()" class="logo" ng-src="pages/home/images/embrace_logo.png">
         <h2 ng-bind="'HOME_CONTENT_TITLE' | translate"></h2>
         <p ng-bind="'HOME_CONTENT_SUBTITLE' | translate"></p>
         <button class="red-btn" ng-bind="'HOME_DISCOVER' | translate"></button>
     </div>
     <div class="product">
-        <img ng-src="home/images/embrace_front-xhdpi.jpg">
+        <img ng-src="pages/home/images/embrace_front-xhdpi.jpg">
     </div>
 </div>

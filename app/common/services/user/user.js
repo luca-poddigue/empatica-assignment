@@ -3,9 +3,7 @@ angular
     /**
      * Exposes all the actions related to the app user.
      */
-    .factory('userService', function userFactory($http, localStorageService, $exceptionHandler) {
-
-        const backendServerUrl = 'http://localhost:3000';
+    .factory('userService', function userFactory($http, localStorageService, $exceptionHandler, backendServerUrl) {
 
         /**
          * Extracts the payload from the response object to an http request.
@@ -52,10 +50,10 @@ angular
          * @returns {Promise<object>} The user personal details.
          */
         function getUser() {
-            const user = localStorageService.get('user');
-            if (!user) {
+            if (!userLoggedIn()) {
                 $exceptionHandler(new Error("User not logged in."));
             }
+            const user = localStorageService.get('user');
             return $http({
                 method: 'GET',
                 url: backendServerUrl + '/users/' + user.id
@@ -67,6 +65,9 @@ angular
          * @returns {Promise<array>} The list of user orders.
          */
         function getUserOrders() {
+            if (!userLoggedIn()) {
+                $exceptionHandler(new Error("User not logged in."));
+            }
             const user = localStorageService.get('user');
             return $http({
                 method: 'GET',

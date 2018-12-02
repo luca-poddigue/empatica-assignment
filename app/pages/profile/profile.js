@@ -5,7 +5,7 @@ angular.module('empatica')
         });
     })
     .component('profilePage', {
-        templateUrl: 'profile/profile.html',
+        templateUrl: 'pages/profile/profile.html',
         controller: function profileController(userService, $location) {
 
             const $ctrl = this;

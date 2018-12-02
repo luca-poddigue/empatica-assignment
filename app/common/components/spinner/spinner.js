@@ -4,21 +4,15 @@ angular.module('empatica')
         bindings: {
             promise: '<'
         },
-        controller: function spinnerController($q, $scope) {
+        controller: function spinnerController() {
             const $ctrl = this;
 
             $ctrl.$onChanges = function (changes) {
                 if (changes.promise && $ctrl.promise) {
                     $ctrl.loading = true;
-                    $ctrl.promise.then(
-                        (response) => {
-                            $scope.$evalAsync(() => $ctrl.loading = false);
-                            return response;
-                        },
-                        (rejection) => {
-                            $scope.$evalAsync(() => $ctrl.loading = false);
-                            return $q.reject(rejection);
-                        }
+                    $ctrl.promise.finally(
+                        () =>
+                            $ctrl.loading = false
                     );
                 }
             };

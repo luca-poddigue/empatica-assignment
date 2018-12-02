@@ -2,7 +2,7 @@ describe('profile', function () {
 
     it('should redirect to home if the user tries to access his profile but he is not logged in', function () {
         browser.get('/profile');
-        expect(browser.getLocationAbsUrl()).toMatch("/");
+        expect(browser.getCurrentUrl()).toBe(browser.baseUrl);
     });
 
     describe('personal details', function () {
@@ -18,8 +18,8 @@ describe('profile', function () {
         });
 
         it('should display the user full name and email after personal details are loaded', function () {
-            expect(element(by.css('.profile #name h2')).getText()).toMatch('John Doe');
-            expect(element(by.css('.profile #name h2')).getText()).toMatch('John Doe');
+            expect(element(by.css('.profile #name h2')).getText()).toBe('John Doe');
+            expect(element(by.css('.profile #email h2')).getText()).toBe('john@doe.com');
         });
     });
 
@@ -38,8 +38,8 @@ describe('profile', function () {
         it('should display order details after orders are loaded', function () {
             const orders = element.all(by.css('order-block'));
             expect(orders.count()).toBe(2);
-            expect(orders.get(0).element(by.css('.order-ref')).getText()).toMatch('#ord-2018-a993bee3');
-            expect(orders.get(1).element(by.css('.order-ref')).getText()).toMatch('#ord-2018-b6012cc8');
+            expect(orders.get(0).element(by.css('.order-ref')).getText()).toBe('#ord-2018-a993bee3');
+            expect(orders.get(1).element(by.css('.order-ref')).getText()).toBe('#ord-2018-b6012cc8');
         });
 
         it('should display a confirmation modal if the user click clicks the Cancel button', function () {
@@ -68,7 +68,7 @@ describe('profile', function () {
             expect(modal.isPresent()).toBe(false);
             const orders = element.all(by.css('order-block'));
             expect(orders.count()).toBe(1);
-            expect(orders.get(0).element(by.css('.order-ref')).getText()).not.toMatch(orderToDeleteRef);
+            expect(orders.get(0).element(by.css('.order-ref')).getText()).not.toBe(orderToDeleteRef);
         });
     });
 

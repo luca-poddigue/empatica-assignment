@@ -4,8 +4,8 @@
 
     <spinner id="user-spinner" promise="$ctrl.userPromise"></spinner>
 
-    <div ng-if="$ctrl.user" id="name">
-        <div class="data-block">
+    <div ng-if="$ctrl.user">
+        <div class="data-block" id="name">
             <h3 ng-bind="::'PROFILE_NAME' | translate"></h3>
             <h2 ng-bind="$ctrl.user.firstName + ' ' + $ctrl.user.lastName"></h2>
         </div>
@@ -27,6 +27,6 @@
     </order-block>
 </div>
 
-<div ng-if="$ctrl.orders.length === 0" class="info-box">
+<div ng-if="$ctrl.orders.length === 0" class="info-box" id="no-orders-message">
     <span ng-bind-html="'PROFILE_NO_ORDERS' | translate"></span>
 </div>

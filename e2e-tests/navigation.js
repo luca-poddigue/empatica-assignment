@@ -3,7 +3,7 @@ describe('navigation', function () {
 
     it('should redirect to / when location does not correspond to any route', function () {
         browser.get('somethingUnmapped');
-        expect(browser.getLocationAbsUrl()).toMatch("/");
+        expect(browser.getCurrentUrl()).toBe(browser.baseUrl);
     });
 
     it('should display the login button when the user is not logged in', function () {
@@ -33,12 +33,12 @@ describe('navigation', function () {
         it('should redirect to home when clicking the link to home', function () {
             element(by.id('profile')).click();
             element(by.id('home')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/");
+            expect(browser.getCurrentUrl()).toBe(browser.baseUrl);
         });
 
         it('should redirect to the user profile when clicking the link to profile', function () {
             element(by.id('profile')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/profile");
+            expect(browser.getCurrentUrl()).toBe(browser.baseUrl + "profile");
         });
 
         it('should show the link to home only if the user is not already on the home page', function () {
@@ -54,9 +54,9 @@ describe('navigation', function () {
 
         it('should redirect to home when the user logs out', function () {
             element(by.id('profile')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/profile");
+            expect(browser.getCurrentUrl()).toBe(browser.baseUrl + "profile");
             element(by.id('logout')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/");
+            expect(browser.getCurrentUrl()).toBe(browser.baseUrl);
         });
     });
 });
