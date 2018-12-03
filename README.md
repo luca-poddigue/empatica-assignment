@@ -46,8 +46,8 @@ To start Protractor and run the full test suite:
 * Run `npm run protractor`.
 
 **Note:**
-Under the hood, Protractor uses the [Selenium Standalone Server][selenium], which in turn requires
-the [Java Development Kit (JDK)][jdk] to be installed on your local machine.
+Under the hood, Protractor uses the Selenium Standalone Server, which in turn requires
+the Java JDK to be installed on your local machine.
 
 **Note:**
 I have deliberately written some of the test cases assuming this is a demo frontend project backed by a dummy server. For example, orders get cancelled but never created, which would breaks tests idempotency if the orders were really deleted.
