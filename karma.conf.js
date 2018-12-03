@@ -7,7 +7,7 @@ module.exports = function (config) {
             'common/**/!(*spec).js': ['coverage'],
             'pages/**/!(*spec).js': ['coverage']
         },
-        reporters: ['coverage'],
+        reporters: ['progress', 'coverage'],
         coverageReporter: {
             type: 'cobertura',
             dir: 'coverage/'

@@ -21,7 +21,7 @@ The project contains both the fake backend and the frontend. I pushed the backen
 
 The provided `gulpfile` contains the build configuration to generate a distributable version of the app. More details can be found directly within the build script.
 
-To build the app ensure Gulp is installed globally and run `gulp build`. A `dist` folder will be generated with all the required files.
+To build the app run `npm run build`. A `dist` folder will be generated with all the required files.
 
 To run a frontend server that exposes the build app, use `npm run start-dist`. The server binds by default to port `8001`.
 
@@ -42,6 +42,7 @@ End-to-End tests can be found under `e2e-tests`.
 If you previously ran `npm install`, all the required dependencies will be already available.
 
 To start Protractor and run the full test suite:
+* Install the webdriver with `npm run update-webdriver`.
 * Ensure both the frontend and the backend servers are up and running.
 * Run `npm run protractor`.
 
