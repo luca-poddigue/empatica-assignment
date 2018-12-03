@@ -25,7 +25,7 @@ module.exports = function (config) {
             'common/**/*.js',
             'pages/**/*.js',
             'common/**/*.html',
-            'pages/**/*.html',
+            'pages/**/*.html'
         ],
         autoWatch: false,
         frameworks: ['jasmine'],
