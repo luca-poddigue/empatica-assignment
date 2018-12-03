@@ -1,16 +1,16 @@
 <div class="data-block">
     <h3 class="order-ref" ng-bind="::$ctrl.order.ref"></h3>
-    <h2 ng-bind="::'ORDER_STATUS_'+$ctrl.order.status.toUpperCase() | translate"></h2>
+    <h2 class="order-status" ng-bind="::'ORDER_STATUS_'+$ctrl.order.status.toUpperCase() | translate"></h2>
 
     <div class="items">
         <h4 ng-bind="::'ORDER_ORDERED_ITEMS' | translate"></h4>
-        <div ng-repeat="item in $ctrl.order.items track by $index" class="item">
+        <div ng-repeat="item in $ctrl.order.items track by $index" class="item ordered-item">
             <span class="name" ng-bind="::item.name"></span>
             <span class="value" ng-bind="::item.amount | currency : '$'"></span>
         </div>
     </div>
 
-    <div class="items">
+    <div class="items discounts" ng-if="$ctrl.order.discounts">
         <h4 ng-bind="::'ORDER_DISCOUNTS' | translate"></h4>
         <div ng-repeat="discount in $ctrl.order.discounts track by $index" class="item">
             <span class="name" ng-bind="::discount.name"></span>

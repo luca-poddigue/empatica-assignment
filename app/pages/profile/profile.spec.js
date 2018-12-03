@@ -4,6 +4,7 @@ describe('profile page', function () {
     let userService;
     let $location;
     let $q;
+    let scope;
 
     const userDetails = {"id": 1, "firstName": "John", "lastName": "Doe", "email": "john@doe.com"};
     const userOrders = [{
@@ -66,29 +67,10 @@ describe('profile page', function () {
 
     it('should load and display the user orders', function () {
         spyOn(userService, 'userLoggedIn').and.returnValue(true);
-        const orders = [{
-            "id": 1,
-            "ref": "#ord-2018-a993bee3",
-            "status": "paid",
-            "tracking": {"carrier": "UPS", "trackingCode": "DAJA91930102NDAKKS0", "status": "in_transit"},
-            "items": [{"sku": "emb-mb-s", "name": "Embrace Watch - Stretchable Band Black", "amount": 249}],
-            "discounts": [{"name": "Christmas 2018 - 10% OFF", "type": "percent", "value": 10}]
-        }, {
-            "id": 2,
-            "ref": "#ord-2018-b6012cc8",
-            "status": "paid",
-            "tracking": null,
-            "items": [{
-                "sku": "emb-bb-s",
-                "name": "Embrace Watch - Stretchable Band Blue",
-                "amount": 249
-            }, {"sku": "emb-mb-s", "name": "Embrace Watch - Stretchable Band Black", "amount": 249}],
-            "discounts": [{"name": "2x1 Embrace", "type": "amount", "value": 249}]
-        }];
-        spyOn(userService, 'getUserOrders').and.returnValue($q.resolve(orders));
+        spyOn(userService, 'getUserOrders').and.returnValue($q.resolve(userOrders));
         spyOn(userService, 'getUser').and.returnValue($q.resolve());
         scope.$digest();
-        expect(profilePage.find('order-block').length).toBe(2);
+        expect(profilePage.find('order-block').length).toBeGreaterThan(0);
     });
 
     it('should display a loading spinner until user orders are loaded', function () {
@@ -111,8 +93,15 @@ describe('profile page', function () {
         expect(profilePage.find('#no-orders-message').length).toBe(1);
     });
 
-    function prepareOrdersValue(ordersValue) {
-
-    }
+    it('should delete the order from the UI when the callback for cancelled order is called', function () {
+        spyOn(userService, 'userLoggedIn').and.returnValue(true);
+        spyOn(userService, 'getUserOrders').and.returnValue($q.resolve(userOrders));
+        spyOn(userService, 'getUser').and.returnValue($q.resolve());
+        scope.$digest();
+        expect(profilePage.find('order-block').length).toBe(2);
+        profilePage.controller('profile-page').onOrderCancelled(1);
+        scope.$digest();
+        expect(profilePage.find('order-block').length).toBe(1);
+    });
 
 });

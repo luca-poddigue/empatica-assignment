@@ -51,13 +51,12 @@ angular.module('empatica')
                 $ctrl.cancellingOrder = true;
                 $ctrl.cancelOrderPromise = userService.cancelUserOrder($ctrl.order.id).then(
                     () => {
-                        $ctrl.cancellingOrder = false;
-                        $ctrl.onOrderCancelled();
+                        if (angular.isFunction($ctrl.onOrderCancelled)) {
+                            $ctrl.onOrderCancelled();
+                        }
                         $ctrl.setCancelOrderModalVisible(false);
-                    },
-                    () => $ctrl.cancellingOrder = false
-                )
-                ;
+                    })
+                    .finally(() => $ctrl.cancellingOrder = false);
             };
 
             /**
@@ -82,7 +81,6 @@ angular.module('empatica')
                 if (discount.type === 'percent') {
                     return itemsTotal * discount.value / 100;
                 }
-                $exceptionHandler(new Error(`Unrecognized discount type: ${discount.type}.`));
             }
         }
     });

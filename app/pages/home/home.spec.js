@@ -2,6 +2,7 @@ describe('home page', function () {
 
     let homePage;
     let featureHelperService;
+    let scope;
 
     beforeEach(module('empatica'));
 

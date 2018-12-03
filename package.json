@@ -12,7 +12,6 @@
     "angular-translate": "^2.18.1",
     "flatted": "^2.0.0",
     "html5-boilerplate": "0.0.1",
-    "karma-phantomjs-launcher": "^1.0.4",
     "save-dev": "^2.0.0",
     "spinkit": "^1.2.5"
   },
@@ -52,10 +51,10 @@
     "start-dist": "cd dist && ws --spa index.html --port 8001",
     "start": "cd app && ws --spa index.html --port 8000",
     "test": "karma start karma.conf.js --single-run",
-    "preprotractor": "npm run update-webdriver",
     "update-webdriver": "webdriver-manager update --gecko false",
     "protractor": "protractor e2e-tests/protractor.conf.js",
     "copy-libs": "cpx \"node_modules/{angular,angular-*,spinkit,html5-boilerplate/dist}/**/*\" app/lib -C",
-    "postinstall": "npm run copy-libs"
+    "postinstall": "npm run copy-libs",
+    "build": "gulp build"
   }
 }

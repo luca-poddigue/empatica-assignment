@@ -26,7 +26,7 @@ order-block {
       &.tracking-code {
         @include screen-small() {
           min-width: 130px;
-          @include word-wrap();
+          word-break: break-all;
         }
       }
     }

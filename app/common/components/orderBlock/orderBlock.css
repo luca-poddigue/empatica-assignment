@@ -22,9 +22,7 @@ order-block .items .value {
 @media screen and (max-width: 390px) {
     order-block .items .value.tracking-code {
         min-width: 130px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        word-break: break-word;
+        word-break: break-all;
     }
 }
 
